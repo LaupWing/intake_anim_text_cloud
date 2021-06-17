@@ -1,4 +1,45 @@
 *{
    padding:0;
    margin:0;
+   font-family: 'Roboto', sans-serif;
+}
+
+body{
+   width: 100vw;
+   height: 100vh;
+   background-color: black;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.cloud{
+   background: white;
+   border-radius: 5px;
+   font-size: 12px;
+   width: 300px;
+   overflow: hidden;
+}
+
+.cloud header{
+   padding: 10px 15px;
+   background: lightcoral;
+   color: white;
+   font-size: 10px;
+}
+
+.cloud .content{
+   padding: 15px;
+}
+
+.cloud h2{
+   padding: 5px 10px;
+   border: solid 1px rgb(192, 192, 192);
+   border-radius: 5px;
+   margin: 10px 0;
+}
+.cloud h2:hover{
+   border-color: black;
+   cursor: pointer;
 }

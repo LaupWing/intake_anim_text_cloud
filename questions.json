@@ -1,0 +1,32 @@
+[
+   {
+      "type": "javascript",
+      "question": "Test question",
+      "options": [
+         "A",
+         "B",
+         "C"
+      ],
+      "answer": "A"
+   },
+   {
+      "type": "css",
+      "question": "Test question",
+      "options": [
+         "A",
+         "B",
+         "C"
+      ],
+      "answer": "A"
+   },
+   {
+      "type": "html",
+      "question": "Test question",
+      "options": [
+         "A",
+         "B",
+         "C"
+      ],
+      "answer": "A"
+   }
+]
