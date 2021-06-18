@@ -7,7 +7,8 @@
          "B",
          "C"
       ],
-      "answer": "A"
+      "answer": "A",
+      "point": 2
    },
    {
       "type": "css",
@@ -17,7 +18,8 @@
          "B",
          "C"
       ],
-      "answer": "A"
+      "answer": "A",
+      "point": 2
    },
    {
       "type": "html",
@@ -27,6 +29,7 @@
          "B",
          "C"
       ],
-      "answer": "A"
+      "answer": "A",
+      "point": 2
    }
 ]
