@@ -11,6 +11,17 @@
       "point": 2
    },
    {
+      "type": "javascript",
+      "question": "Test question",
+      "options": [
+         "A",
+         "B",
+         "C"
+      ],
+      "answer": "A",
+      "point": 2
+   },
+   {
       "type": "css",
       "question": "Test question",
       "options": [
