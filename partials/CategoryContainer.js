@@ -5,10 +5,9 @@ export class CategoryContainer{
       this.main_container = document.body.querySelector('.content')
       this.template = document.body.querySelector('#question-template')
       this.question = this.template.content.querySelector('.question')
-      this.answer_container = this.question
-         .querySelector('.answer-container')
-         .cloneNode(true)
-      this.question.id = type
+      this.category_container = document.createElement('div')
+      this.category_container.classList.add('category')
+      this.question.dataset.category = type
       this.init()
    }
    createAnswer(content){
@@ -20,13 +19,16 @@ export class CategoryContainer{
    createQuestions(){
       console.log(this.questions)
       this.questions.forEach(q=>{
-         this.question.querySelector('h3').textContent = q.question
+         const question = this.question.cloneNode(true)
+         const answer_container = question.querySelector('.answer-container')
+         question.querySelector('h3').textContent = q.question
          q.options.forEach(a =>{
             const answer = this.createAnswer(a)
-            this.answer_container.insertAdjacentElement('beforeend', answer)
+            answer_container.insertAdjacentElement('beforeend', answer)
          })
-         console.log(this.question)
+         this.category_container.insertAdjacentElement('beforeend', question)
       })
+      console.log(this.category_container)
    }
 
    init(){
