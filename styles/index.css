@@ -30,13 +30,37 @@ body {
 }
 
 .hidden {
-	opacity: 0;
+   opacity: 0;
 	user-select: none;
 	pointer-events: none;
 }
 
 .category {
-	grid-template-columns: 1fr;
+   grid-template-columns: 1fr;
 	grid-template-rows: 1fr;
 	display: grid;
+}
+
+header{
+   grid-template-columns: 1fr;
+   grid-template-rows: 1fr;
+   display: grid;
+}
+header h1{
+   grid-column: 1;
+   grid-row: 1;
+   margin: auto 0;
+}
+
+header h1.category{
+   display: flex;
+   align-items: center;
+   font-size: 16px;
+   text-transform: uppercase;
+}
+header h1.category button{
+   width: auto;
+   background: white;
+   font-size: 10px;
+   margin-right: 5px;
 }

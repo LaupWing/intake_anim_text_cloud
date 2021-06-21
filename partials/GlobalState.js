@@ -5,13 +5,21 @@ export class GlobalState {
       this.correct_answers = 0
       this.points = 0
       this.category_selected = false
+      this.init()
    }
    setVisibleContainer(){
       const categories = document.querySelector('.categories')
       const questions = document.querySelectorAll('.question')
+      const header = document.querySelector('header')
+
       questions.forEach(question =>{
          if(!question.classList.contains('hidden')){
             question.classList.add('hidden')
+         }
+      })
+      header.querySelectorAll('h1').forEach(h1 =>{
+         if(!h1.classList.contains('hidden')){
+            h1.classList.add('hidden')
          }
       })
       if(!categories.classList.contains('hidden')){
@@ -19,9 +27,21 @@ export class GlobalState {
       }
       
       if(this.category_selected){
+         const category = header.querySelector('.category')
          this.category_selected.showQuestion()
+         category.querySelector('span').textContent = this.category_selected.type
+         category.classList.remove('hidden')
       }else{
+         const all_categories = header.querySelector('.all_categories')
+         all_categories.classList.remove('hidden')
          categories.classList.remove('hidden')
       }
+   }
+   init(){
+      const headerBackBtn = document.querySelector('header h1.category button')
+      headerBackBtn.addEventListener('click', ()=>{
+         this.category_selected = false
+         this.setVisibleContainer()
+      })
    }
 }
