@@ -9,7 +9,7 @@ export class CategoryContainer{
       this.question = this.template.content.querySelector('.question')
       this.category_container = document.createElement('div')
       this.category_container.classList.add('category')
-      this.question.dataset.category = type
+      this.category_container.dataset.category = type
       this.init()
    }
    createAnswer(content){
