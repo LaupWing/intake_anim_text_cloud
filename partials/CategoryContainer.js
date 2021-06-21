@@ -1,3 +1,5 @@
+import { Option } from "./Option.js"
+
 export class CategoryContainer{
    constructor({type, questions}){
       this.type = type
@@ -17,20 +19,15 @@ export class CategoryContainer{
       return option
    }
    createQuestions(){
-      console.log(this.questions)
       this.questions.forEach(q=>{
          const question = this.question.cloneNode(true)
-         const answer_container = question.querySelector('.answer-container')
+         this.options_container = question.querySelector('.options-container')
          question.querySelector('h3').textContent = q.question
-         q.options.forEach(a =>{
-            const answer = this.createAnswer(a)
-            answer_container.insertAdjacentElement('beforeend', answer)
-         })
+         q.options.forEach(o => new Option(o, this.options_container))
          this.category_container.insertAdjacentElement('beforeend', question)
       })
       console.log(this.category_container)
    }
-
    init(){
       this.createQuestions()
    }
