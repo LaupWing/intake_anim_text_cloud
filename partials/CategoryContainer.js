@@ -26,7 +26,7 @@ export class CategoryContainer{
          q.options.forEach(o => new Option(o, this.options_container))
          this.category_container.insertAdjacentElement('beforeend', question)
       })
-      console.log(this.category_container)
+      this.main_container.insertAdjacentElement('beforeend', this.category_container)
    }
    init(){
       this.createQuestions()

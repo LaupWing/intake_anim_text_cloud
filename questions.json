@@ -1,46 +1,46 @@
 [
    {
       "type": "javascript",
-      "question": "Test question",
+      "question": "Javascript Vraag 1",
       "options": [
-         "A",
-         "B",
-         "C"
+         "A J1",
+         "B J1",
+         "C J1"
       ],
-      "answer": "A",
+      "answer": 1,
       "point": 2
    },
    {
       "type": "javascript",
-      "question": "Test question",
+      "question": "Javascript Vraag 2",
       "options": [
-         "A",
-         "B",
-         "C"
+         "A J2",
+         "B J2",
+         "C J2"
       ],
-      "answer": "A",
+      "answer": 0,
       "point": 2
    },
    {
       "type": "css",
-      "question": "Test question",
+      "question": "Css Vraag",
       "options": [
-         "A",
-         "B",
-         "C"
+         "A CSS",
+         "B CSS",
+         "C CSS"
       ],
-      "answer": "A",
+      "answer": 2,
       "point": 2
    },
    {
       "type": "html",
-      "question": "Test question",
+      "question": "Html Vraag",
       "options": [
-         "A",
-         "B",
-         "C"
+         "A HTML",
+         "B HTML",
+         "C HTML"
       ],
-      "answer": "A",
+      "answer": 1,
       "point": 2
    }
 ]
