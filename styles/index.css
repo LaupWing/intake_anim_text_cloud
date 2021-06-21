@@ -1,36 +1,42 @@
 @import url(./partials//cloud.css);
+@import url(./partials//question.css);
 
-
-*{
-   padding:0;
-   margin:0;
-   font-family: 'Roboto', sans-serif;
+* {
+	padding: 0;
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
 }
 
-body{
-   width: 100vw;
-   height: 100vh;
-   background-color: black;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
+body {
+	width: 100vw;
+	height: 100vh;
+	background-color: black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
-.content{
-   display: grid;
-   grid-template-columns: 1fr;
-   grid-template-rows: 1fr;
+.content {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
 }
 
 .categories,
-.category{
-   grid-column: 1;
-   grid-row: 1;
+.category {
+	grid-column: 1;
+	grid-row: 1;
 }
 
-.hidden{
-   opacity: 0;
-   user-select: none;
-   pointer-events: none;
+.hidden {
+	opacity: 0;
+	user-select: none;
+	pointer-events: none;
+}
+
+.category {
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	display: grid;
 }

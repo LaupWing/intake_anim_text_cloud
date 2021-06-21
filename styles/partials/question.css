@@ -1,0 +1,23 @@
+.question {
+	grid-column: 1;
+	grid-row: 1;
+	display: flex;
+	flex-direction: column;
+}
+.question h3 {
+	font-size: 1.1rem;
+}
+
+.question .options-container {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin: 10px 0;
+}
+
+.answer{
+   border: solid 1px #b4b4b4;
+   padding: 5px;
+   border-radius: 5px;
+}
