@@ -20,4 +20,9 @@
    border: solid 1px #b4b4b4;
    padding: 5px;
    border-radius: 5px;
+   cursor: pointer;
+}
+
+.answer:hover{
+   border-color: black;
 }

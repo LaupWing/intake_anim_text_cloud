@@ -3,6 +3,7 @@ import { Option } from "./Option.js"
 export class CategoryContainer{
    constructor({type, questions}){
       this.type = type
+      this.current_question = 0
       this.questions = questions
       this.main_container = document.body.querySelector('.content')
       this.template = document.body.querySelector('#question-template')
@@ -35,6 +36,10 @@ export class CategoryContainer{
          this.category_container.insertAdjacentElement('beforeend', question)
       })
       this.main_container.insertAdjacentElement('beforeend', this.category_container)
+   }
+   showQuestion(){
+      const questions = this.category_container.querySelectorAll('.question')
+      questions[this.current_question].classList.remove('hidden')
    }
    updateScore(){
 

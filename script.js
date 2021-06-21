@@ -1,16 +1,23 @@
-import {Questions} from './partials/Questions.js'
 import {GlobalState} from './partials/GlobalState.js'
 import { Categories } from './partials/Categories.js'
+import { getUniqueTypes } from './partials/utils/getUniqueTypes.js'
+import { CategoryContainer } from './partials/CategoryContainer.js'
 
 fetch('./questions.json')
    .then(res=>res.json())
    .then(data=>{
       const global_state = new GlobalState(data)
-      const questions = new Questions(data)
-      const selectCategorie = (e)=>{
-         const categorie = e.target.textContent.trim().toLowerCase()
-         questions.categorie = categorie
-      }
-      new Categories(data)
+      const questions = getUniqueTypes(data)
+         .map(x=>{
+            const questions = data.filter(y=>y.type === x)
+            return {
+               type:x,
+               questions
+            }
+         })
+         .map(type => 
+            new CategoryContainer(type, global_state)
+         )
+      new Categories(data, questions, global_state)
       
    })
