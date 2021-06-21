@@ -1,6 +1,6 @@
 import {Questions} from './partials/Questions.js'
 import {GlobalState} from './partials/GlobalState.js'
-import { createCategories } from './partials/createCategories.js'
+import { Categories } from './partials/Categories.js'
 
 fetch('./questions.json')
    .then(res=>res.json())
@@ -11,7 +11,6 @@ fetch('./questions.json')
          const categorie = e.target.textContent.trim().toLowerCase()
          questions.categorie = categorie
       }
-      const categories = document.body.querySelectorAll('.cloud .content button')
-      categories.forEach(ctg=>ctg.addEventListener('click', selectCategorie))
-      createCategories(data)
+      new Categories(data)
+      
    })
