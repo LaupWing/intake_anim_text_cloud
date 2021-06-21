@@ -28,6 +28,7 @@
    background: transparent;
    font-size: 14px;
    font-weight: bold;
+   text-transform: uppercase;
 }
 .cloud button:hover{
    border-color: black;

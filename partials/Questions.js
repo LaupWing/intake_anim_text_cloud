@@ -1,4 +1,5 @@
 import { CategoryContainer } from "./CategoryContainer.js"
+import { getUniqueTypes } from "./utils/getUniqueTypes.js"
 
 
 export class Questions{
@@ -12,9 +13,7 @@ export class Questions{
       const questions = this.questions.filter(question=>question.type === value)
    }
    typesAndQuestion(array){
-      return array
-         .map(x=>x.type)
-         .filter((value, index, self)=> self.indexOf(value) === index)
+      return getUniqueTypes(array)
          .map(x=>{
             const questions = array.filter(y=>y.type === x)
             return {
