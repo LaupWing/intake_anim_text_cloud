@@ -23,10 +23,21 @@ export class CategoryContainer{
          const question = this.question.cloneNode(true)
          this.options_container = question.querySelector('.options-container')
          question.querySelector('h3').textContent = q.question
-         q.options.forEach(o => new Option(o, this.options_container))
+         q.options.forEach((o, i) => 
+            new Option(
+               o, 
+               this.options_container,
+               i,
+               q.answer,
+               this.updateScore
+            )
+         )
          this.category_container.insertAdjacentElement('beforeend', question)
       })
       this.main_container.insertAdjacentElement('beforeend', this.category_container)
+   }
+   updateScore(){
+
    }
    init(){
       this.createQuestions()
