@@ -4,7 +4,8 @@ export class Option{
       container, 
       index, 
       answer,
-      updateScore
+      updateScore,
+      global_state
    ){
       this.container = container
       this.index = index
@@ -15,6 +16,7 @@ export class Option{
       this.option.textContent = option
       this.createOption()
       this.clicked = false
+      this.global_state = global_state
    }
    createOption(){
       this.container.insertAdjacentElement('beforeend', this.option)
@@ -25,6 +27,11 @@ export class Option{
          const correct = this.index === this.answer
          this.clicked = true
          this.option.classList.add(correct ? 'correct' : 'incorrect')
+         if(correct){
+            this.global_state.category_selected.nextQuestion()
+            console.log(this.global_state)
+            this.global_state.setVisibleContainer()
+         }
          this.updateScore()
       }
    }

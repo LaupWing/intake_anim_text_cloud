@@ -1,8 +1,9 @@
 import { Option } from "./Option.js"
 
 export class CategoryContainer{
-   constructor({type, questions}){
+   constructor({type, questions}, global_state){
       this.type = type
+      this.global_state = global_state
       this.current_question = 0
       this.questions = questions
       this.main_container = document.body.querySelector('.content')
@@ -30,7 +31,8 @@ export class CategoryContainer{
                this.options_container,
                i,
                q.answer,
-               this.updateScore
+               this.updateScore,
+               this.global_state
             )
          )
          this.category_container.insertAdjacentElement('beforeend', question)
@@ -43,6 +45,11 @@ export class CategoryContainer{
    }
    updateScore(){
 
+   }
+   nextQuestion(){
+      if((this.questions.length-1) > this.current_question){
+         this.current_question = this.current_question + 1
+      }
    }
    init(){
       this.createQuestions()
