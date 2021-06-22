@@ -11,7 +11,7 @@ export class Option{
       this.answer = answer
       this.updateScore = updateScore
       this.option = document.createElement('div')
-      this.option.classList.add('answer')
+      this.option.classList.add('option')
       this.option.textContent = option
       this.createOption()
       this.clicked = false

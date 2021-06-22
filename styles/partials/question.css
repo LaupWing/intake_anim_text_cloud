@@ -16,13 +16,26 @@
 	margin: 10px 0;
 }
 
-.answer{
+.option{
    border: solid 1px #b4b4b4;
    padding: 5px;
    border-radius: 5px;
    cursor: pointer;
+   font-weight: bold;
 }
 
-.answer:hover{
+.option:hover{
    border-color: black;
+}
+
+.option.correct,
+.option.incorrect{
+   color: white;
+}
+
+.option.correct{
+   background-color: lightgreen;
+}
+.option.incorrect{
+   background-color: tomato;
 }
