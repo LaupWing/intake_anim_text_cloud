@@ -1,4 +1,3 @@
-import { Option } from "./Option.js"
 import { Question } from "./Question.js"
 
 export class CategoryContainer{
@@ -8,8 +7,6 @@ export class CategoryContainer{
       this.current_question = 0
       this.questions = questions
       this.main_container = document.body.querySelector('.content')
-      this.template = document.body.querySelector('#question-template')
-      this.question = this.template.content.querySelector('.question')
       this.category_container = document.createElement('div')
       this.category_container.classList.add('category')
       this.category_container.dataset.category = type
@@ -23,21 +20,10 @@ export class CategoryContainer{
    }
    createQuestions(){
       this.questions.forEach(q=>{
-         new Question(this.question)
-         const question = this.question.cloneNode(true)
-         this.options_container = question.querySelector('.options-container')
-         question.querySelector('h3').textContent = q.question
-         q.options.forEach((o, i) => 
-            new Option(
-               o, 
-               this.options_container,
-               i,
-               q.answer,
-               this.updateScore,
-               this.global_state
-            )
+         new Question(
+            q, 
+            this.category_container
          )
-         this.category_container.insertAdjacentElement('beforeend', question)
       })
       this.main_container.insertAdjacentElement('beforeend', this.category_container)
    }
