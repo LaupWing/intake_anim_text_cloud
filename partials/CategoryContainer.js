@@ -1,4 +1,5 @@
 import { Option } from "./Option.js"
+import { Question } from "./Question.js"
 
 export class CategoryContainer{
    constructor({type, questions}, global_state){
@@ -22,6 +23,7 @@ export class CategoryContainer{
    }
    createQuestions(){
       this.questions.forEach(q=>{
+         new Question(this.question)
          const question = this.question.cloneNode(true)
          this.options_container = question.querySelector('.options-container')
          question.querySelector('h3').textContent = q.question

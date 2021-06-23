@@ -29,7 +29,6 @@ export class Option{
          this.option.classList.add(correct ? 'correct' : 'incorrect')
          if(correct){
             this.global_state.category_selected.nextQuestion()
-            console.log(this.global_state)
             this.global_state.setVisibleContainer()
          }
          this.updateScore()
