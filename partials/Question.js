@@ -1,11 +1,12 @@
 import { Option } from "./Option.js"
 
 export class Question{
-   constructor(data, container){
+   constructor(data, container, questions){
       this.template = document.body.querySelector('#question-template')
       this.question = this.template.content.querySelector('.question')
       this.data = data
       this.container = container
+      this.questions = questions
       this.init()
    }
    createQuestions(){
@@ -26,13 +27,21 @@ export class Question{
    correct(){
       // this.global_state.category_selected.nextQuestion()
       // this.global_state.setVisibleContainer()
-      console.log(this)
+      console.log(this.questions)
+      console.log(this.data)
+      console.log(this.questions.indexOf(this.data))
       this.controlEvents()
    }
    controlEvents(){
-      console.log(this.question)
+      if(this.questions.indexOf(this.data) + 1 !== this.questions.length){
+         this.question.querySelector('.next').classList.remove('disabled')
+      }
    }
    init(){
       this.createQuestions()
+      if(this.questions.indexOf(this.data) > 0){
+         console.log(this.data)
+         this.question.querySelector('.prev').classList.remove('disabled')
+      }
    }
 }

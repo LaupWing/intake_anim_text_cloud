@@ -22,7 +22,8 @@ export class CategoryContainer{
       this.questions.forEach(q=>{
          new Question(
             q, 
-            this.category_container
+            this.category_container,
+            this.questions
          )
       })
       this.main_container.insertAdjacentElement('beforeend', this.category_container)
