@@ -18,17 +18,21 @@ export class Question{
             this.options_container,
             i,
             this.data.answer,
-            this.updateScore,
-            this.global_state
+            this.correct.bind(this)
          )
       )
       this.container.insertAdjacentElement('beforeend', this.question)
+   }
+   correct(){
+      // this.global_state.category_selected.nextQuestion()
+      // this.global_state.setVisibleContainer()
+      console.log(this)
+      this.controlEvents()
    }
    controlEvents(){
       console.log(this.question)
    }
    init(){
       this.createQuestions()
-      this.controlEvents()
    }
 }
