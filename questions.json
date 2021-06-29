@@ -42,5 +42,16 @@
       ],
       "answer": 1,
       "point": 2
+   },
+   {
+      "type": "react",
+      "question": "Html Vraag",
+      "options": [
+         "A HTML",
+         "B HTML",
+         "C HTML"
+      ],
+      "answer": 1,
+      "point": 2
    }
 ]
