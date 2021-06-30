@@ -24,7 +24,7 @@ export class CategoryContainer{
             q, 
             this.category_container,
             this.questions,
-            this.nextQuestion.bind(this)
+            this.setQuestion.bind(this)
          )
       })
       this.main_container.insertAdjacentElement('beforeend', this.category_container)
@@ -36,9 +36,11 @@ export class CategoryContainer{
    updateScore(){
 
    }
-   nextQuestion(){
-      if((this.questions.length-1) > this.current_question){
-         this.current_question = this.current_question + 1
+   setQuestion(forward){
+      if(forward && (this.questions.length-1) > this.current_question){
+         this.current_question++
+      }else if(this.current_question !== 0){
+         this.current_question--
       }
       const questions = this.category_container.querySelectorAll('.question')
       questions.forEach(q=>{
