@@ -50,6 +50,11 @@
 
 .controls svg{
    width: 20px;
+   cursor: pointer;
+}
+
+.controls svg.disabled{
+   pointer-events: none;
 }
 .controls svg.disabled > *{
    stroke: rgb(209, 209, 209);
