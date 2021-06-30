@@ -23,7 +23,8 @@ export class CategoryContainer{
          new Question(
             q, 
             this.category_container,
-            this.questions
+            this.questions,
+            this.nextQuestion.bind(this)
          )
       })
       this.main_container.insertAdjacentElement('beforeend', this.category_container)
@@ -39,6 +40,13 @@ export class CategoryContainer{
       if((this.questions.length-1) > this.current_question){
          this.current_question = this.current_question + 1
       }
+      const questions = this.category_container.querySelectorAll('.question')
+      questions.forEach(q=>{
+         if(!q.classList.contains('hidden')){
+            q.classList.add('hidden')
+         }
+      })
+      questions[this.current_question].classList.remove('hidden')
    }
    init(){
       this.createQuestions()

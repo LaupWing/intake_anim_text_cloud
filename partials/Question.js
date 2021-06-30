@@ -1,12 +1,13 @@
 import { Option } from "./Option.js"
 
 export class Question{
-   constructor(data, container, questions){
+   constructor(data, container, questions, next){
       this.template = document.body.querySelector('#question-template')
       this.question = this.template.content.querySelector('.question')
       this.data = data
       this.container = container
       this.questions = questions
+      this.next = next
       this.init()
    }
    createQuestions(){
@@ -40,8 +41,8 @@ export class Question{
    init(){
       this.createQuestions()
       if(this.questions.indexOf(this.data) > 0){
-         console.log(this.data)
          this.question.querySelector('.prev').classList.remove('disabled')
       }
+      this.question.querySelector('.next').addEventListener('click', this.next.bind(this))
    }
 }
