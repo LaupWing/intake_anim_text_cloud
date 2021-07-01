@@ -1,5 +1,5 @@
 import {GlobalState} from './partials/GlobalState.js'
-import { Categories } from './partials/Categories.js'
+import { CategoriesMenu } from './partials/CategoriesMenu.js'
 import { getUniqueTypes } from './partials/utils/getUniqueTypes.js'
 import { CategoryContainer } from './partials/CategoryContainer.js'
 
@@ -18,6 +18,6 @@ fetch('./questions.json')
          .map(type => 
             new CategoryContainer(type, global_state)
          )
-      new Categories(data, questions, global_state)
+      new CategoriesMenu(data, questions, global_state)
       
    })

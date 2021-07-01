@@ -1,6 +1,6 @@
 import { getUniqueTypes } from "./utils/getUniqueTypes.js"
 
-export class Categories{
+export class CategoriesMenu{
    constructor(data, category_containers, global_state){
       this.container = document.querySelector('.content .categories')
       this.data = data
