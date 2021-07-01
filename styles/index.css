@@ -1,5 +1,9 @@
-@import url(./partials//cloud.css);
+@import url(./partials//button.css);
 @import url(./partials//question.css);
+@import url(./partials//cateogies.css);
+@import url(./partials//header.css);
+@import url(./partials//controls.css);
+@import url(./partials//option.css);
 
 * {
 	padding: 0;
@@ -17,50 +21,23 @@ body {
 	justify-content: center;
 }
 
-.content {
+.cloud .content {
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: 1fr;
+   padding: 15px;
 }
 
-.categories,
-.category {
-	grid-column: 1;
-	grid-row: 1;
-}
-
-.hidden {
+.cloud .hidden {
    opacity: 0;
 	user-select: none;
 	pointer-events: none;
 }
 
-.category {
-   grid-template-columns: 1fr;
-	grid-template-rows: 1fr;
-	display: grid;
-}
-
-header{
-   grid-template-columns: 1fr;
-   grid-template-rows: 1fr;
-   display: grid;
-}
-header h1{
-   grid-column: 1;
-   grid-row: 1;
-   margin: auto 0;
-}
-
-header h1.category{
-   display: flex;
-   align-items: center;
-   font-size: 16px;
-   text-transform: uppercase;
-}
-header h1.category button{
-   width: auto;
+.cloud{
    background: white;
-   font-size: 10px;
-   margin-right: 5px;
+   border-radius: 5px;
+   font-size: 12px;
+   width: 300px;
+   overflow: hidden;
 }
