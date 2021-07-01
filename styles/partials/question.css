@@ -52,6 +52,9 @@
    width: 20px;
    cursor: pointer;
 }
+.controls .progress{
+   font-weight: bold;
+}
 
 .controls svg.disabled{
    pointer-events: none;

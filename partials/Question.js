@@ -38,6 +38,7 @@ export class Question{
       if(this.questions.indexOf(this.data) > 0){
          this.question.querySelector('.prev').classList.remove('disabled')
       }
+      this.question.querySelector('.progress').textContent = `${this.questions.indexOf(this.data)+1} / ${this.questions.length}`
       this.question.querySelector('.next').addEventListener('click',()=> 
          this.setQuestion(true)
       )
