@@ -1,13 +1,14 @@
 import { Option } from "./Option.js"
 
 export class Question{
-   constructor(data, container, questions, setQuestion){
+   constructor(data, container, questions, setQuestion, globalState){
       this.template = document.body.querySelector('#question-template')
       this.question = this.template.content.querySelector('.question')
       this.data = data
       this.container = container
       this.questions = questions
       this.setQuestion = setQuestion
+      this.globalState = globalState
       this.init()
    }
    createQuestions(){

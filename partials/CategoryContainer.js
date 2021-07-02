@@ -24,7 +24,8 @@ export class CategoryContainer{
             q, 
             this.category_container,
             this.questions,
-            this.setQuestion.bind(this)
+            this.setQuestion.bind(this),
+            this.global_state
          )
       })
       this.main_container.insertAdjacentElement('beforeend', this.category_container)
@@ -32,9 +33,6 @@ export class CategoryContainer{
    showQuestion(){
       const questions = this.category_container.querySelectorAll('.question')
       questions[this.current_question].classList.remove('hidden')
-   }
-   updateScore(){
-
    }
    setQuestion(forward){
       if(forward && (this.questions.length-1) > this.current_question){
