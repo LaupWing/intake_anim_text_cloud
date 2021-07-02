@@ -10,8 +10,10 @@ export class GlobalState {
    correct(points){
       this.correct_answers++
       this.points = this.points + points
+      console.log(this)
    }
    wrong(){
+      console.log(this)
       this.wrong_answers++
    }
    setVisibleContainer(){

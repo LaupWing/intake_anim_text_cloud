@@ -9,29 +9,35 @@ export class Question{
       this.questions = questions
       this.setQuestion = setQuestion
       this.globalState = globalState
+      this.options = []
       this.init()
    }
    createQuestions(){
       this.question = this.question.cloneNode(true)
       this.options_container = this.question.querySelector('.options-container')
       this.question.querySelector('h3').textContent = this.data.question
-      this.data.options.forEach((o, i) => 
+      this.options = this.data.options.map((o, i) => 
          new Option(
             o, 
             this.options_container,
             i,
             this.data,
-            this.correct.bind(this)
+            this.correct.bind(this),
+            this.wrong.bind(this),
+            this.alreadyCorrectlyAnswered
          )
       )
       this.container.insertAdjacentElement('beforeend', this.question)
    }
    correct(points){
-      console.log(points)
-      this.controlEvents()
+      this.options.forEach(opt=> opt.alreadyCorrectlyAnswered = true)
+      this.setControlState()
       this.globalState.correct(points)
    }
-   controlEvents(){
+   wrong(points){
+      this.globalState.wrong(points)
+   }
+   setControlState(){
       if(this.questions.indexOf(this.data) + 1 !== this.questions.length){
          this.question.querySelector('.next').classList.remove('disabled')
       }
