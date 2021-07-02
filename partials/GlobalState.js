@@ -7,6 +7,13 @@ export class GlobalState {
       this.category_selected = false
       this.init()
    }
+   correct(points){
+      this.correct_answers++
+      this.points = this.points + points
+   }
+   wrong(){
+      this.wrong_answers++
+   }
    setVisibleContainer(){
       const categories = document.querySelector('.categories')
       const questions = document.querySelectorAll('.question')

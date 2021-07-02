@@ -20,14 +20,16 @@ export class Question{
             o, 
             this.options_container,
             i,
-            this.data.answer,
+            this.data,
             this.correct.bind(this)
          )
       )
       this.container.insertAdjacentElement('beforeend', this.question)
    }
-   correct(){
+   correct(points){
+      console.log(points)
       this.controlEvents()
+      this.globalState.correct(points)
    }
    controlEvents(){
       if(this.questions.indexOf(this.data) + 1 !== this.questions.length){

@@ -3,12 +3,12 @@ export class Option{
       option, 
       container, 
       index, 
-      answer,
+      data,
       correct
    ){
       this.container = container
       this.index = index
-      this.answer = answer
+      this.data = data
       this.option = document.createElement('div')
       this.option.classList.add('option')
       this.option.textContent = option
@@ -22,11 +22,11 @@ export class Option{
    }
    handleClick(){
       if(!this.clicked){
-         const correct = this.index === this.answer
+         const correct = this.index === this.data.answer
          this.clicked = true
          this.option.classList.add(correct ? 'correct' : 'incorrect')
          if(correct){
-            this.correct()
+            this.correct(this.data.point)
          }
       }
    }
